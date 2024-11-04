@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+    <div>
+        <section class="testimonial-section">
+            <h2>Ce Que Nos Clients Disent</h2>
+            <p class="testimonial-intro">
+                Chez SNIC GROUP, nous mettons un point d'honneur à satisfaire nos clients.
+                Voici ce qu'ils pensent de notre travail et comment nos solutions ont transformé leurs entreprises.
+            </p>
+            <div class="testimonial-container">
+                <button class="testimonial-btn prev-btn">&#10094;</button>
+
+                <div class="testimonial-carousel">
+                    <div class="testimonial">
+                        <img class="circle-around" src="{% static 'images/logo/logo_1.jpg' %}" alt="Client 1">
+                        <div class="testimonial-text">
+                            <p class="client-name">John Doe</p>
+                            <p class="client-function">PDG, Tech Innovators</p>
+                            <p class="client-quote">
+                                "SNIC GROUP nous a aidés à développer une solution numérique incroyable qui a transformé notre business."
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="testimonial">
+                        <img src="{% static 'images/logo/logo_1.jpg' %}" alt="Client 2">
+                        <div class="testimonial-text">
+                            <p class="client-name">Jane Smith</p>
+                            <p class="client-function">Directrice Marketing, Web Solutions</p>
+                            <p class="client-quote">
+                                "Leur créativité et leur professionnalisme ont permis de donner vie à notre vision. Hautement recommandé !"
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="testimonial">
+                        <img src="{% static 'images/logo/logo_1.jpg' %}" alt="Client 3">
+                        <div class="testimonial-text">
+                            <p class="client-name">Michael Johnson</p>
+                            <p class="client-function">Fondateur, Startup Labs</p>
+                            <p class="client-quote">
+                                "La qualité des solutions proposées par SNIC GROUP est incomparable. Un partenaire technologique de choix."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="testimonial-btn next-btn">&#10095;</button>
+            </div>
+        </section>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+    <div>
+        <!-- Section 1: Introduction -->
+        <section class="intro-section">
+            <div class="intro-content">
+                <h2 class="text-center">Ce Que Nous Offrons</h2>
+                <p class="text-center">
+                    Chez SNIC GROUP, nous mettons notre expertise en technologie au service de vos besoins
+                    spécifiques. Nous croyons en des solutions sur mesure, adaptées à chaque client,
+                    pour atteindre des objectifs concrets et durables.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: Vidéo de Présentation -->
+{#        <section class="video-section text-center">#}
+{#            <video controls class="presentation-video">#}
+{#                <source src="{% static 'video/presentation_sincgroup.mp4' %}" type="video/mp4">#}
+{#                Votre navigateur ne supporte pas la vidéo.#}
+{#            </video>#}
+{#        </section>#}
+
+        <!-- Section 3: Nos Services (ne pas changer) -->
+        <section class="services-section">
+            <h2 class="text-center">Nos Services</h2>
+            <div class="services-container">
+                {% for service in services %}
+                    <div class="service-item">
+                        <img src="{{ service.image.url }}" alt="Applications sur mesure">
+                        <h3>{{ service.nom }}</h3>
+                        <p>{{ service.description }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Section 4: Réalisations -->
+{#        {% if realisations %}#}
+            <section class="case-studies-section">
+                <h2 class="text-center">Nos Réalisations</h2>
+                <div class="case-studies-container">
+                    {% for realisation in realisations %}
+                        <div class="case-study">
+                            <img src="{{ realisation.image.url }}" alt="{{ realisation.nom_projet }}">
+                            <h3>{{ realisation.nom_projet }}</h3>
+                            <p>{{ realisation.description }}</p>
+                        </div>
+                    {% endfor %}
+                    
+                    <div class="case-study">
+                        <img src="{% static 'images/logo/logo_1.jpg' %}" alt="Projet 1">
+                        <h3>Projet Innovant X</h3>
+                        <p>Description du projet, son impact et les résultats obtenus pour le client.</p>
+                    </div>
+                    <div class="case-study">
+                        <img src="{% static 'images/logo/logo_1.jpg' %}" alt="Projet 2">
+                        <h3>Transformation Digitale Y</h3>
+                        <p>Description d'une mission de transformation digitale réussie.</p>
+                    </div>
+                </div>
+            </section>
+{#        {% endif %}#}
+
+        <!-- Section 5: Appel à l'Action et Questions Fréquentes en deux colonnes -->
+        <section class="dual-section">
+            <div class="cta-faq-container">
+                <!-- Appel à l'Action (CTA) -->
+                <div class="cta-section">
+                    <h2>Prêt à Travailler Ensemble ?</h2>
+                    <p>
+                        Contactez-nous dès aujourd'hui pour discuter de votre projet et découvrir comment
+                        nous pouvons vous aider à atteindre vos objectifs.
+                    </p>
+                    <a href="{% url 'contact' %}" class="btn btn-outline-info">Nous Contacter</a>
+                </div>
+
+                <!-- Questions Fréquentes (FAQ) -->
+                <section class="faq">
+                    <h2 class="text-center">Questions Fréquentes</h2>
+                    <div class="faq-section">
+                        <div class="faq-item">
+                            <h3>Quels types de solutions développez-vous ?</h3>
+                            <p>Nous créons des applications web, mobiles et desktop sur mesure, ainsi que des scripts d'automatisation adaptés à vos besoins spécifiques.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Comment fonctionne votre service de formation ?</h3>
+                            <p>Nous proposons des formations en ligne et en présentiel sur divers sujets technologiques, de l'initiation à l'informatique à des cours avancés en programmation.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </div>
+{% endblock %}

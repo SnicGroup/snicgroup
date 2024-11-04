@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+   <!-- Section 1: Explication de SNIC GROUP -->
+    <section class="about-section">
+        <div class="about-content">
+            <h2>À Propos de nous</h2>
+            <p>
+                SNIC GROUP (Solution Numérique par l'Innovation et la Créativité) est une entreprise spécialisée
+                dans le développement de solutions numériques innovantes et créatives.
+            </p>
+            <p>
+                Notre engagement repose sur la qualité, l'innovation et la satisfaction client. Nous croyons fermement
+                que chaque projet mérite une approche unique.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 2: Membres Clés -->
+    <section class="team-section">
+        <h2>Notre Équipe</h2>
+        <div class="carousel-container">
+            <button class="carousel-btn prev-btn">&#10094;</button>
+
+            <div class="team-carousel">
+                {% for team in teams %}
+                    <div class="team-member">
+                        {% if team.image %}
+                            <img src="{{ team.image.url }}" alt="{{ team.post }}">
+                        {% else %}
+                            <img src="{% static 'images/logo/logo_1.jpg' %}" alt="Membre 1">
+                        {% endif %}
+                        <h3>{{ team.fullName }}</h3>
+                        <p>{{ team.post }}</p>
+                    </div>
+                {% endfor %}
+{#                <div class="team-member">#}
+{#                    <img src="{% static 'images/logo/logo_1.jpg' %}" alt="Membre 2">#}
+{#                    <h3>Memoué KONE</h3>#}
+{#                    <p>CEO</p>#}
+{#                </div>#}
+{#                <div class="team-member">#}
+{#                    <img src="{% static 'images/logo/logo_1.jpg' %}" alt="Membre 3">#}
+{#                    <h3>Lougmane DIALLO</h3>#}
+{#                    <p>UX/UI DESIGNER</p>#}
+{#                </div>#}
+{#                <div class="team-member">#}
+{#                    <img src="{% static 'images/logo/logo_1.jpg' %}" alt="Membre 4">#}
+{#                    <h3>Amadou GUEYE</h3>#}
+{#                    <p>DEVELOPPEUR BACKEND</p>#}
+{#                </div>#}
+{#                <div class="team-member">#}
+{#                    <img src="{% static 'images/logo/logo_1.jpg' %}" alt="Membre 5">#}
+{#                    <h3>Gabriel FERNANDEZ</h3>#}
+{#                    <p>DEVELOPPEUR FRONT</p>#}
+{#                </div>#}
+            </div>
+
+            <button class="carousel-btn next-btn">&#10095;</button>
+        </div>
+    </section>
+
+{% endblock %}

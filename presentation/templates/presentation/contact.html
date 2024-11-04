@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+    <div>
+        <section class="contact-section">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>CONTACTEZ-NOUS POUR VOTRE PROJET OU POUR PLUS D'INFORMATIONS</h2>
+                    <p>
+                        SNIC GROUP est là pour vous aider à concrétiser vos idées. N'hésitez pas à nous contacter pour en savoir plus sur nos services et discuter de vos besoins.
+                    </p>
+                    <img src="{% static 'images/logo/logo_1.jpg' %}" alt="Contact" class="contact-image">
+                </div>
+
+                <div class="contact-form">
+                    <form action="{% url 'contact' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="email" class="text-dark fw-bold">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="text-dark fw-bold">Objet</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="text-dark fw-bold">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

@@ -1,0 +1,717 @@
+/*
+-----------------------------------------------------------------------
+DEFINITION DES CONSTANTE UTILISABLE POUR LE DEVELOPPEMENT DU SITE
+-----------------------------------------------------------------------
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  --dark-color: #111;
+  --semi-white-color: whitesmoke;
+  --first-color: #2eb0f0;
+  --white-color: #ffffff;
+}
+
+/*
+--------------------------------------------------------------------
+STYLE POUR METTRE LE FOOTER TOUT EN BAS PEUT IMPORTE LA TAILLE DU CONTENU DE LA PAGE
+---------------------------------------------------------------------
+*/
+html, body{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex-grow: 1;
+    background-color: var(--semi-white-color);
+}
+
+/*
+----------------------------------------
+    STYLE POUR LE MENU
+----------------------------------------
+ */
+header {
+    background-color: var(--dark-color);
+    padding: 20px 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+div.logo {
+    color: var(--semi-white-color);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+div.logo img {
+    width: 100px;
+}
+
+a.a-logo{
+    color: var(--first-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: var(--semi-white-color);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--first-color);
+}
+
+/* styles pour le menu hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white-color);
+    margin: 5px;
+    transition: 0.3s;
+}
+
+/*
+---------------------------------
+    Page index
+---------------------------------
+ */
+
+/*Baniere page index*/
+div.carousel-inner div.carousel-item {
+    height: auto;
+}
+
+div.carousel-item img {
+    height: 100vh;
+}
+
+span.slide-btn{
+    background-color: var(--first-color);
+    border-radius: 50%;
+}
+
+div.div-banner {
+    font-size: 1.5rem;
+    background-color: var(--dark-color);
+    opacity: 0.8;
+    border-bottom-left-radius: 10%;
+    border-top-right-radius: 10%;
+}
+
+/* Section 2: Qui Sommes-Nous */
+.about-section {
+    padding: 60px 20px;
+    background-color: var(--semi-white-color);
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--first-color);
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    color: var(--semi-white-color);
+    width: 75%;
+    display: block;
+    margin: auto;
+}
+
+/* Section 3: Statistiques */
+.statistics-section {
+    padding: 60px 20px;
+    background-color: var(--white-color);
+    text-align: center;
+}
+
+.statistics-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    color: var(--first-color);
+}
+
+.stat-item p {
+    font-size: 1rem;
+    color: var(--dark-color);
+}
+
+/* Section 4: Vous Avez Un Projet ? */
+.cta-section {
+    padding: 60px 20px;
+    background-color: var(--first-color);
+    text-align: center;
+    color: var(--white-color);
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    padding: 10px 30px;
+    background-color: var(--white-color);
+    font-weight: bold;
+    color: var(--first-color);
+    border: none;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--first-color);
+    color: var(--white-color);
+    font-weight: bold;
+}
+
+/*
+---------------------------------------
+    Section partenaires ==== Team
+---------------------------------------
+*/
+
+/*
+------------------------------------------
+    Section service
+------------------------------------------
+ */
+.services-section {
+    padding: 60px 20px;
+    background-color: var(--semi-white-color);
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+.service-item {
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.service-item img {
+    max-width: 80px;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--first-color);
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: var(--dark-color);
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+}
+
+/*---------------------- Section Intro ---------------------*/
+.intro-section {
+    background-color: var(--semi-white-color); /* Light blue background */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.intro-content h2 {
+    font-size: 2.5rem;
+    color: var(--first-color);
+    margin-bottom: 20px;
+}
+
+.intro-content p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* ----------------- Section Video --------------------------*/
+.video-section {
+    background-color: var(--white-color);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.video-section video {
+    max-width: 80%;
+    height: 50vh;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --------------------- Section Réalisations ---------------------- */
+.case-studies-section {
+    background-color: var(--white-color);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.case-studies h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.case-studies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+.case-study {
+    background-color: var(--white-color);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 2px;
+}
+
+.case-study img {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+.case-study h3 {
+    font-size: 1.5rem;
+    color: var(--first-color);
+    margin-bottom: 10px;
+}
+
+.case-study p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* ---------------------- Section CTA (Call to Action) ---------------------*/
+.cta-section {
+    background-color: var(--semi-white-color); /* Light blue background */
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    color: var(--first-color);
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.cta-section .btn {
+    padding: 12px 30px;
+    background-color: var(--first-color);
+    color: var(--white-color);
+    border-radius: 8px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.cta-section .btn:hover {
+    background-color: var(--first-color);
+}
+
+/* --------------------------Section FAQ -------------------------*/
+section.faq {
+    background-color: var(--white-color);
+    padding: 20px 60px 60px;
+}
+
+.faq-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 2fr));
+    gap: 20px;
+}
+
+.faq-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-item {
+    background-color: var(--white-color);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+    font-size: 1.5rem;
+    color: var(--first-color);
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/*
+-----------------------------
+    Section Témoignages
+-----------------------------
+*/
+.testimonial-section {
+    background-color: var(--semi-white-color);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.testimonial-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.testimonial-intro {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.testimonial-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-btn {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    color: #333;
+}
+
+.testimonial-carousel {
+    display: flex;
+    overflow: hidden;
+    width: 80%;
+    justify-content: space-around;
+}
+
+.testimonial {
+    flex: 1;
+    margin: 10px;
+    background-color: var(--white-color);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: left;
+}
+
+.testimonial img {
+    width: 60px;
+    height: 60px;
+    border-radius: 35%;
+    margin: auto;
+    display: block;
+    border: 1px solid var(--dark-color);
+}
+
+.testimonial-text {
+    text-align: left;
+}
+
+.client-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #333;
+}
+
+.client-function {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.client-quote {
+    font-size: 1rem;
+    color: #555;
+}
+
+/*
+----------------------------------------
+    PAGE CONTACT
+----------------------------------------
+ */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #333;
+    color: var(--white-color);
+}
+
+.contact-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    background-color: var(--white-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+    flex: 1;
+    padding: 40px;
+    background-color: var(--first-color);
+    color: var(--semi-white-color);
+}
+
+.contact-info h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.contact-image {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.contact-form {
+    flex: 1;
+    padding: 40px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--semi-white-color);
+    border-radius: 5px;
+    background-color: var(--semi-white-color);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--first-color);
+}
+
+.submit-btn {
+    background-color: var(--first-color);
+    color: var(--white-color);
+    padding: 15px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--first-color);
+}
+
+/*
+---------------------------
+Section 1: À Propos
+---------------------------
+*/
+.about-section {
+    background-color: var(--dark-color);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* Section 2: Membres Clés */
+.team-section {
+    background-color: var(--white-color);
+    padding: 50px;
+    text-align: center;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.team-carousel {
+    display: flex;
+    overflow: hidden;
+    width: 70%;
+    max-width: 1200px;
+    justify-content: space-around;
+}
+
+.team-member {
+    flex: 1;
+    margin: 10px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    /*border-radius: 30%;*/
+    margin-bottom: 10px;
+}
+
+/*
+---------------------------------------
+  ICON RESEAU SOCIAL POUR LE FOOTER
+-----------------------------------------
+*/
+footer{
+    background-color: var(--dark-color);
+    color: var(--white-color)
+}
+
+div.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+div.footer-item {
+    display: block;
+    margin: auto;
+}
+
+.social-icon {
+  margin: 0;
+  padding: 0;
+}
+
+.social-icon-item {
+  list-style: none;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.social-icon-link {
+  border: 1px solid var(--semi-white-color);
+  border-radius: 50px;
+  font-size: 20px;
+  color: var(--semi-white-color);
+  display: inline-block;
+  vertical-align: top;
+  margin: 2px 2px 5px 2px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.social-icon-link:hover {
+  background: var(--first-color);
+  border-color: transparent;
+  color: var(--white-color);
+}
