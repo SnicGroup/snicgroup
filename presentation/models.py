@@ -2,6 +2,7 @@ import os
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
+from django.utils import timezone
 
 
 class BaseModelWithImage(models.Model):
@@ -42,13 +43,25 @@ class BaseModelWithImage(models.Model):
         super().delete(*args, **kwargs)
 
 
+class VisitePlateforme(models.Model):
+    date = models.DateField(default=timezone.now)
+    device_type = models.CharField(max_length=50)
+    view_count = models.PositiveIntegerField(default=1)
+
+    def __str__(self):
+        return f"{self.date} - {self.device_type} - {self.view_count}"
+
+
 class Entreprise(BaseModelWithImage):
     nom = models.CharField(max_length=100)
     description = models.TextField()
     adresse = models.CharField(max_length=100)
     slogan = models.CharField(max_length=100)
     nb_experience = models.IntegerField(default=0, null=True, blank=True)
-    logo = models.ImageField(null=True, blank=True)
+    video = models.FileField(upload_to="video", blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.nom}"
 
     class Meta:
         verbose_name = "Entreprise"

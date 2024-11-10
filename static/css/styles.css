@@ -16,6 +16,10 @@ DEFINITION DES CONSTANTE UTILISABLE POUR LE DEVELOPPEMENT DU SITE
   --white-color: #ffffff;
 }
 
+span.text-first-blue {
+    color: var(--first-color);
+}
+
 /*
 --------------------------------------------------------------------
 STYLE POUR METTRE LE FOOTER TOUT EN BAS PEUT IMPORTE LA TAILLE DU CONTENU DE LA PAGE

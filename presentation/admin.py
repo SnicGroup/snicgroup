@@ -1,6 +1,12 @@
 from django.contrib import admin
 
-from presentation.models import Partenaire, Entreprise, Objectif, Service, Realisation, Team
+from presentation.models import Partenaire, Entreprise, Objectif, Service, Realisation, Team, VisitePlateforme
+
+
+class NombreVisiteAdmin(admin.ModelAdmin):
+    list_display = ('device_type', 'view_count', 'date')
+    list_filter = ('device_type', 'date')
+    search_fields = ('device_type', )
 
 
 class EntrepriseAdmin(admin.ModelAdmin):
@@ -27,6 +33,7 @@ class PartenaireAdmin(admin.ModelAdmin):
     search_fields = ('nom', 'sigle')
 
 
+admin.site.register(VisitePlateforme, NombreVisiteAdmin)
 admin.site.register(Entreprise, EntrepriseAdmin)
 admin.site.register(Objectif, ObjectifAdmin)
 admin.site.register(Service, ServiceAdmin)

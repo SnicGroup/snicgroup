@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-*y$59^9j@l((kx0ph_lczz#p++rokkn1(tn+qw@sfbh*3jt*7h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '8428-41-223-51-178.ngrok-free.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'a628-197-149-236-251.ngrok-free.app']
 
 
 # Application definition
@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'snicgroup.context_processors.getEntrepriseInfo',
             ],
         },
     },
